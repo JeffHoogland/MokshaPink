@@ -1,0 +1,5 @@
+[Settings]
+gtk-color-scheme = 
+"base_color:#FA06BC\nbg_color:#000000\ntooltip_bg_color:#000000\nselected_bg_color:#0C0067\ntext_color:#4A4FFF\nfg_color:#252525\ntooltip_fg_color:#FFFFFF\nselected_fg_color:#FA06BC\nlink_color:#FA06BC\nbg_color_dark:#000000\nfg_color_dark:#7E7E7E"
+gtk-auto-mnemonics = 1
+gtk-visible-focus = automatic
