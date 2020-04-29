@@ -9637,7 +9637,7 @@ group {
             }
             program {
                name: "strength,0";
-               action: STATE_SET "strength,0" 0.0;
+               action: STATE_SET "strength,no" 0.0;
                target: "eventarea.image";
             }
             program {
@@ -26088,7 +26088,7 @@ programs {
             source: "e";
             action: STATE_SET "combo" 0.0;
             target: "e.swallow.icon";
-            target: "e.text.label";
+            //~ target: "e.text.label";
          }
          program {
             name: "disable";
@@ -27445,6 +27445,10 @@ programs {
                   text_class: "ilist_item";
                }
             }
+            description { state: "selected" 0.0;
+					inherit: "default" 0.0;
+					color_class: "ilist_item";
+				}
          }
          part {
             name: "fg1";
@@ -27625,6 +27629,10 @@ programs {
                   text_class: "ilist_item";
                }
             }
+            description { state: "selected" 0.0;
+					inherit: "default" 0.0;
+					color_class: "ilist_item";
+				} 
          }
          part {
             name: "fg1";
@@ -30236,7 +30244,7 @@ programs {
             name: "h1_down1";
             signal: "mouse,down,1";
             source: "h1";
-            action: STATE_SET "clicked" 0.0;
+            action: STATE_SET "default" 0.0;
             target: "h1";
          }
          program {
@@ -30268,7 +30276,7 @@ programs {
             name: "h2_down1";
             signal: "mouse,down,1";
             source: "h2";
-            action: STATE_SET "clicked" 0.0;
+            action: STATE_SET "default" 0.0;
             target: "h2";
          }
          program {
@@ -30300,7 +30308,7 @@ programs {
             name: "v1_down1";
             signal: "mouse,down,1";
             source: "v1";
-            action: STATE_SET "clicked" 0.0;
+            action: STATE_SET "default" 0.0;
             target: "v1";
          }
          program {
@@ -30332,7 +30340,7 @@ programs {
             name: "v2_down1";
             signal: "mouse,down,1";
             source: "v2";
-            action: STATE_SET "clicked" 0.0;
+            action: STATE_SET "default" 0.0;
             target: "v2";
          }
          program {
@@ -34252,8 +34260,8 @@ programs {
             target: "icon_box_shadow";
             target: "icon_box";
             target: "base";
-            target: "icon_zoom";
-            target: "e.swallow.content";
+            //~ target: "icon_zoom";
+            //~ target: "e.swallow.content";
             target: "events";
             after: "thumb_gen2";
          }
@@ -34533,8 +34541,8 @@ programs {
             target: "icon_box_shadow";
             target: "icon_box";
             target: "base";
-            target: "icon_zoom";
-            target: "e.swallow.content";
+            //~ target: "icon_zoom";
+            //~ target: "e.swallow.content";
             target: "events";
             target: "theme";
             after: "thumb_gen2";
@@ -34746,8 +34754,8 @@ programs {
             target: "icon_box_shadow";
             target: "icon_box";
             target: "base";
-            target: "icon_zoom";
-            target: "e.swallow.content";
+            //~ target: "icon_zoom";
+            //~ target: "e.swallow.content";
             target: "events";
             after: "thumb_gen2";
          }
