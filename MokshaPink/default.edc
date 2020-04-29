@@ -36310,34 +36310,7 @@ programs {
                rel2.relative: 0.95 1.0;
             }
          }
-         part {
-            name: "label2";
-            type: TEXT;
-            scale: 1;
-            clip_to: "clip";
-            mouse_events: 0;
-            description {
-               state: "default" 0.0;
-               align: 0.5 0.5;
-               fixed: 0 1;
-               rel1.to: "e.text.label";
-               rel2.to: "e.text.label";
-               color: 0 0 0 255;
-               text {
-                  font: "Sans:style";
-                  text_source: "e.text.label";
-                  size: 30;
-                  min: 0 1;
-                  align: 0.5 0.5;
-                  text_class: "fileman_icon";
-               }
-            }
-            description {
-               state: "selected" 0.0;
-               inherit: "default" 0.0;
-               color: 10 10 10 0;
-            }
-         }
+         
          part {
             name: "bg";
             mouse_events: 0;
@@ -36356,6 +36329,7 @@ programs {
                color: 245 245 245 250;
             }
          }
+         
          part {
             name: "e.text.label";
             type: TEXT;
@@ -36373,17 +36347,51 @@ programs {
                color: 245 245 245 255;
                text {
                   font: "Sans:style=Bold";
-                  size: 39;
+                  size: 10;
                   min: 0 1;
                   align: 0.5 0.5;
                   text_class: "fileman_icon";
                }
+               visible: 0;
             }
             description {
                state: "selected" 0.0;
                inherit: "default" 0.0;
+               visible: 1;
             }
          }
+         part {
+            name: "label2";
+            type: TEXT;
+            scale: 1;
+            //~ clip_to: "clip";
+            mouse_events: 0;
+            description {
+               state: "default" 0.0;
+               align: 0.5 0.5;
+               fixed: 0 1;
+               rel1.to: "e.text.label";
+               rel2.to: "e.text.label";
+               color: 0 0 0 255;
+               text {
+                  font: "Sans:style";
+                  text_source: "e.text.label";
+                  size: 10;
+                  min: 0 1;
+                  align: 0.5 0.5;
+                  text_class: "fileman_icon";
+               }
+               visible: 1;
+            }
+            description {
+               state: "selected" 0.0;
+               inherit: "default" 0.0;
+               color: 10 10 10 0;
+               visible: 1;
+            }
+         }
+         
+         
          part {
             name: "event";
             type: RECT;
