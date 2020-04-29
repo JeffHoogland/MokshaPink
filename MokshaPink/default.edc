@@ -13666,6 +13666,7 @@ programs {
                   size: 8;
                   min: 1 1;
                   text_class: "module_small";
+                  ellipsis: -1;
                }
             }
          }
@@ -13729,6 +13730,7 @@ programs {
                   size: 8;
                   min: 1 1;
                   text_class: "module_small";
+                  ellipsis: -1;
                }
             }
             description { state: "today" 0.0;
