@@ -46,8 +46,9 @@ data {
 	item: "theme/version"	"0.1.0";
 	item: "theme/author"	"Bodhi Team";
 	item: "theme/license"	"BSD Artistic License";
-	item: "gtk-theme"       "Sway-N PINK";
-	item: "version"         "110";
+	item: "gtk-theme"		"MokshaPink-GTK";
+	item: "icon-theme"		"Icons-Moksha-Pink";
+	item: "version"			"110";
 }
 
 collections {
@@ -7387,8 +7388,8 @@ group {
             clip_to: "clip";
             description {
                state: "default" 0.0;
-               rel1.offset: 1 1;
-               rel2.offset: -2 -2;
+               rel1.offset: 0 0;
+               rel2.offset: 0 0;
             }
          }
       }
@@ -9637,7 +9638,7 @@ group {
             }
             program {
                name: "strength,0";
-               action: STATE_SET "strength,0" 0.0;
+               action: STATE_SET "strength,no" 0.0;
                target: "eventarea.image";
             }
             program {
@@ -13666,6 +13667,7 @@ programs {
                   size: 8;
                   min: 1 1;
                   text_class: "module_small";
+                  ellipsis: -1;
                }
             }
          }
@@ -13729,6 +13731,7 @@ programs {
                   size: 8;
                   min: 1 1;
                   text_class: "module_small";
+                  ellipsis: -1;
                }
             }
             description { state: "today" 0.0;
@@ -14245,6 +14248,7 @@ programs {
                   align: 0.5 0.5;
                   min: 1 1;
                   text_class: "module_small";
+                  ellipsis: 0;
                }
             }
          }
@@ -14629,7 +14633,7 @@ programs {
             description {
                state: "default" 0.0;
                rel1 {
-                  relative: 0.6 0.7;
+                  relative: 0.4 0.7;
                   offset: 0 0;
                }
                rel2 {
@@ -14647,6 +14651,7 @@ programs {
                   align: 0.5 0.5;
                   min: 1 1;
                   text_class: "module_small";
+                  ellipsis: -1;
                }
             }
          }
@@ -15675,9 +15680,9 @@ programs {
       alias: "e/modules/systray/main/default";
       alias: "e/modules/systray/main/invisible";
       data {
-         item: "inset" "255 255 255";
-         item: "plain" "230 230 230";
-         item: "default" "255 255 255";
+         item: "inset" "210 136 175";
+         item: "plain" "210 136 175";
+         item: "default" "210 136 175";
       }
       parts {
          part {
@@ -15693,166 +15698,118 @@ programs {
                color: 255 0 0 128;
             }
          }
-         part {
-            name: "e.size";
-            type: RECT;
-            mouse_events: 0;
-            description {
-               state: "default" 0.0;
-               color: 0 0 0 0;
-               rel1.offset: 4 4;
-               rel2.offset: -5 -5;
+         part { name: "e.size"; type: RECT; mouse_events: 0;
+         description { state: "default" 0.0;
+            rel1.offset: 10 0;
+            rel2.offset: -10 -1;
+         }
+         description { state: "vertical" 0.0;
+            rel1.offset: 1 8;
+            rel2.offset: -1 -8;
+         }
+      }
+      
+      part { name: "e.box"; type: BOX;
+         description { state: "default" 0.0;
+            rel1.to: "e.size";
+            rel2.to: "e.size";
+            box {
+               layout: "horizontal";
+               padding: 2 0;
+               align: 0.5 0.5;
+               min: 1 1;
             }
          }
-         part {
-            name: "e.box";
-            type: BOX;
-            description {
-               state: "default" 0.0;
-               rel1.to: "e.size";
-               rel2.to: "e.size";
-               box {
-                  layout: "horizontal";
-                  padding: 2 0;
-                  align: 0.5 0.5;
-                  min: 1 1;
-               }
-            }
-            description {
-               state: "vertical" 0.0;
-               rel1.to: "e.size";
-               rel2.to: "e.size";
-               box {
-                  layout: "vertical";
-                  padding: 0 2;
-                  align: 0.5 0.5;
-                  min: 1 1;
+         description { state: "vertical" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+            box { 
+               layout: "vertical";
+               padding: 0 2;
                }
             }
          }
          programs {
-            program {
-               name: "e,action,disable";
-               signal: "e,action,disable";
-               source: "e";
-               action: STATE_SET "disabled" 0.0;
-               target: "base";
-            }
-            program {
-               name: "e,action,enable";
-               signal: "e,action,enable";
-               source: "e";
-               action: STATE_SET "default" 0.0;
-               target: "base";
-            }
-            program {
-               name: "e,action,orient,float";
-               signal: "e,action,orient,float";
-               source: "e";
-               action: STATE_SET "default" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,horiz";
-               signal: "e,action,orient,horiz";
-               source: "e";
-               action: STATE_SET "default" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,vert";
-               signal: "e,action,orient,vert";
-               source: "e";
-               action: STATE_SET "vertical" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,left";
-               signal: "e,action,orient,left";
-               source: "e";
-               action: STATE_SET "vertical" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,right";
-               signal: "e,action,orient,right";
-               source: "e";
-               action: STATE_SET "vertical" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,top";
-               signal: "e,action,orient,top";
-               source: "e";
-               action: STATE_SET "default" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,bottom";
-               signal: "e,action,orient,bottom";
-               source: "e";
-               action: STATE_SET "default" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,corner_tl";
-               signal: "e,action,orient,corner_tl";
-               source: "e";
-               action: STATE_SET "default" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,corner_tr";
-               signal: "e,action,orient,corner_tr";
-               source: "e";
-               action: STATE_SET "default" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,corner_bl";
-               signal: "e,action,orient,corner_bl";
-               source: "e";
-               action: STATE_SET "default" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,corner_br";
-               signal: "e,action,orient,corner_br";
-               source: "e";
-               action: STATE_SET "default" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,corner_lt";
-               signal: "e,action,orient,corner_lt";
-               source: "e";
-               action: STATE_SET "vertical" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,corner_rt";
-               signal: "e,action,orient,corner_rt";
-               source: "e";
-               action: STATE_SET "vertical" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,corner_lb";
-               signal: "e,action,orient,corner_lb";
-               source: "e";
-               action: STATE_SET "vertical" 0.0;
-               target: "e.box";
-            }
-            program {
-               name: "e,action,orient,corner_rb";
-               signal: "e,action,orient,corner_rb";
-               source: "e";
-               action: STATE_SET "vertical" 0.0;
-               target: "e.box";
-            }
-         }
+      program {
+         signal: "e,action,orient,horiz"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.box";
+      }
+      program {
+         signal: "e,action,orient,vert"; source: "e";
+         action: STATE_SET "vertical" 0.0;
+         target: "e.box";
+         target: "e.size";
+      }
+      program {
+         signal: "e,action,orient,left"; source: "e";
+         action: STATE_SET "vertical" 0.0;
+         target: "e.box";
+         target: "e.size";
+      }
+      program {
+         signal: "e,action,orient,right"; source: "e";
+         action: STATE_SET "vertical" 0.0;
+         target: "e.box";
+         target: "e.size";
+      }
+      program {
+         signal: "e,action,orient,top"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.box";
+      }
+      program {
+         signal: "e,action,orient,bottom"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.box";
+      }
+      program {
+         signal: "e,action,orient,corner_tl"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.box";
+      }
+      program {
+         signal: "e,action,orient,corner_tr"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.box";
+      }
+      program {
+         signal: "e,action,orient,corner_bl"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.box";
+      }
+      program {
+         signal: "e,action,orient,corner_br"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "e.box";
+      }
+      program {
+         signal: "e,action,orient,corner_lt"; source: "e";
+         action: STATE_SET "vertical" 0.0;
+         target: "e.box";
+         target: "e.size";
+      }
+      program {
+         signal: "e,action,orient,corner_rt"; source: "e";
+         action: STATE_SET "vertical" 0.0;
+         target: "e.box";
+         target: "e.size";
+      }
+      program {
+         signal: "e,action,orient,corner_lb"; source: "e";
+         action: STATE_SET "vertical" 0.0;
+         target: "e.box";
+         target: "e.size";
+      }
+      program {
+         signal: "e,action,orient,corner_rb"; source: "e";
+         action: STATE_SET "vertical" 0.0;
+         target: "e.box";
+         target: "e.size";
       }
    }
+}
+}
    group {
       name: "e/modules/systray/main/alternate";
       data {
@@ -15898,40 +15855,34 @@ programs {
                color: 255 0 0 128;
             }
          }
-         part {
-            name: "e.size";
-            type: RECT;
-            mouse_events: 0;
-            description {
-               state: "default" 0.0;
-               color: 0 0 0 0;
-               rel1.offset: 4 4;
-               rel2.offset: -5 -5;
+           part { name: "e.size"; type: RECT; mouse_events: 0;
+         description { state: "default" 0.0;
+            visible: 0;
+            rel1.offset: 10 0;
+            rel2.offset: -10 -1;
+         }
+         description { state: "vertical" 0.0;
+            visible: 0;
+            rel1.offset: 1 8;
+            rel2.offset: -1 -8;
+         }
+      }
+      part { name: "e.box"; type: BOX;
+         description { state: "default" 0.0;
+            rel1.to: "e.size";
+            rel2.to: "e.size";
+            box {
+               layout: "horizontal";
+               padding: 2 0;
+               align: 0.5 0.5;
+               min: 1 1;
             }
          }
-         part {
-            name: "e.box";
-            type: BOX;
-            description {
-               state: "default" 0.0;
-               rel1.to: "e.size";
-               rel2.to: "e.size";
-               box {
-                  layout: "horizontal";
-                  padding: 2 0;
-                  align: 0.5 0.5;
-                  min: 1 1;
-               }
-            }
-            description {
-               state: "vertical" 0.0;
-               rel1.to: "e.size";
-               rel2.to: "e.size";
-               box {
-                  layout: "vertical";
-                  padding: 0 2;
-                  align: 0.5 0.5;
-                  min: 1 1;
+         description { state: "vertical" 0.0;
+            inherit: "default" 0.0;
+            box { 
+               layout: "vertical";
+               padding: 0 2;
                }
             }
          }
@@ -26088,7 +26039,7 @@ programs {
             source: "e";
             action: STATE_SET "combo" 0.0;
             target: "e.swallow.icon";
-            target: "e.text.label";
+            //~ target: "e.text.label";
          }
          program {
             name: "disable";
@@ -27445,6 +27396,10 @@ programs {
                   text_class: "ilist_item";
                }
             }
+            description { state: "selected" 0.0;
+					inherit: "default" 0.0;
+					color_class: "ilist_item";
+				}
          }
          part {
             name: "fg1";
@@ -27625,6 +27580,10 @@ programs {
                   text_class: "ilist_item";
                }
             }
+            description { state: "selected" 0.0;
+					inherit: "default" 0.0;
+					color_class: "ilist_item";
+				} 
          }
          part {
             name: "fg1";
@@ -30236,7 +30195,7 @@ programs {
             name: "h1_down1";
             signal: "mouse,down,1";
             source: "h1";
-            action: STATE_SET "clicked" 0.0;
+            action: STATE_SET "default" 0.0;
             target: "h1";
          }
          program {
@@ -30268,7 +30227,7 @@ programs {
             name: "h2_down1";
             signal: "mouse,down,1";
             source: "h2";
-            action: STATE_SET "clicked" 0.0;
+            action: STATE_SET "default" 0.0;
             target: "h2";
          }
          program {
@@ -30300,7 +30259,7 @@ programs {
             name: "v1_down1";
             signal: "mouse,down,1";
             source: "v1";
-            action: STATE_SET "clicked" 0.0;
+            action: STATE_SET "default" 0.0;
             target: "v1";
          }
          program {
@@ -30332,7 +30291,7 @@ programs {
             name: "v2_down1";
             signal: "mouse,down,1";
             source: "v2";
-            action: STATE_SET "clicked" 0.0;
+            action: STATE_SET "default" 0.0;
             target: "v2";
          }
          program {
@@ -34252,8 +34211,8 @@ programs {
             target: "icon_box_shadow";
             target: "icon_box";
             target: "base";
-            target: "icon_zoom";
-            target: "e.swallow.content";
+            //~ target: "icon_zoom";
+            //~ target: "e.swallow.content";
             target: "events";
             after: "thumb_gen2";
          }
@@ -34533,8 +34492,8 @@ programs {
             target: "icon_box_shadow";
             target: "icon_box";
             target: "base";
-            target: "icon_zoom";
-            target: "e.swallow.content";
+            //~ target: "icon_zoom";
+            //~ target: "e.swallow.content";
             target: "events";
             target: "theme";
             after: "thumb_gen2";
@@ -34746,8 +34705,8 @@ programs {
             target: "icon_box_shadow";
             target: "icon_box";
             target: "base";
-            target: "icon_zoom";
-            target: "e.swallow.content";
+            //~ target: "icon_zoom";
+            //~ target: "e.swallow.content";
             target: "events";
             after: "thumb_gen2";
          }
@@ -35409,6 +35368,7 @@ programs {
                   align: 0.0 0.5;
                   min: 1 1;
                   text_class: "fileman_typebuf";
+                  ellipsis: -1;
                }
             }
          }
@@ -36100,7 +36060,7 @@ programs {
                color: 24 24 24 255;
                text {
                   font: "Sans:style=Bold";
-                  size: 9;
+                  size: 12;
                   min: 0 1;
                   align: 0.0 1.0;
                   text_class: "fileman_typebuf";
@@ -36225,35 +36185,7 @@ programs {
             rel2.relative: 0.95 1.0;
             }
          }
-         part {
-            name: "label2";
-            type: TEXT;
-            scale: 1;
-            clip_to: "clip";
-            mouse_events: 0;
-            description {
-               state: "default" 0.0;
-               align: 0.5 0.5;
-               fixed: 0 1;
-               rel1.to: "e.text.label";
-               rel2.to: "e.text.label";
-               color: 0 0 0 255;
-               text {
-                  font: "Sans:style";
-                  text_source: "e.text.label";
-                  size: 10;
-                  min: 0 1;
-                  align: 0.5 0.5;
-	          text_class: "fileman_icon";
-               }
-            }
-            description {
-               state: "selected" 0.0;
-               inherit: "default" 0.0;
-               color: 10 10 10 0;
-               visible: 0;
-            }
-         }
+         
          part {
             name: "bg";
             mouse_events: 0;
@@ -36272,30 +36204,30 @@ programs {
                color: 200 200 200 255;
             }
          }
+         
          part {
             name: "e.text.label";
             type: TEXT;
             mouse_events: 0;
             clip_to: "clip";
             scale: 1;
-            mouse_events: 0;
             description {
                state: "default" 0.0;
                align: 0.5 0.5;
-               fixed: 0 1;
+               fixed: 1 1;
                rel1.to:   "clip";
                rel2.to:   "clip";
                rel1.offset:   5 3;
                rel2.offset:   -6 -1;
-               visible: 0;
                color: 245 245 245 255;
                text {
                   font: "Sans:style=Bold";
-                  size: 9;
-                  min: 0 1;
+                  size: 10; //
+                  min: 1 1;
                   align: 0.5 0.5;
                   text_class: "fileman_icon";
                }
+               visible: 0;
             }
             description {
                state: "selected" 0.0;
@@ -36303,6 +36235,39 @@ programs {
                visible: 1;
             }
          }
+         
+         part {
+            name: "label2";
+            type: TEXT;
+            scale: 1;
+            //~ clip_to: "clip";
+            mouse_events: 0;
+            description {
+               state: "default" 0.0;
+               align: 0.5 0.5;
+               fixed: 0 1;
+               rel1.to: "e.text.label";
+               rel2.to: "e.text.label";
+               color: 0 0 0 255;
+               text {
+                  font: "Sans:style";
+                  text_source: "e.text.label";
+                  size: 10; //
+                  min: 0 1;
+                  align: 0.5 0.5;
+                  text_class: "fileman_icon";
+               }
+               visible: 1;
+            }
+            description {
+               state: "selected" 0.0;
+               inherit: "default" 0.0;
+               //~ color: 10 10 10 0;
+               visible: 1;
+            }
+         }
+         
+         
          part {
             name: "event";
             type: RECT;
@@ -36344,39 +36309,11 @@ programs {
             mouse_events: 0;
             description {
                state: "default" 0.0;
-            rel1.relative: 0.05 0.0;
-            rel2.relative: 0.95 1.0;
+               rel1.relative: 0.05 0.0;
+               rel2.relative: 0.95 1.0;
             }
          }
-         part {
-            name: "label2";
-            type: TEXT;
-            scale: 1;
-            clip_to: "clip";
-            mouse_events: 0;
-            description {
-               state: "default" 0.0;
-               align: 0.5 0.5;
-               fixed: 0 1;
-               rel1.to: "e.text.label";
-               rel2.to: "e.text.label";
-               color: 0 0 0 255;
-               text {
-                  font: "Sans:style";
-                  text_source: "e.text.label";
-                  size: 10;
-                  min: 0 1;
-                  align: 0.5 0.5;
-                  text_class: "fileman_icon";
-               }
-            }
-            description {
-               state: "selected" 0.0;
-               inherit: "default" 0.0;
-               color: 10 10 10 0;
-               visible: 0;
-            }
-         }
+         
          part {
             name: "bg";
             mouse_events: 0;
@@ -36395,13 +36332,13 @@ programs {
                color: 245 245 245 250;
             }
          }
+         
          part {
             name: "e.text.label";
             type: TEXT;
             mouse_events: 0;
             clip_to: "clip";
             scale: 1;
-            mouse_events: 0;
             description {
                state: "default" 0.0;
                align: 0.5 0.5;
@@ -36410,15 +36347,15 @@ programs {
                rel2.to:   "clip";
                rel1.offset:   5 3;
                rel2.offset:   -6 -1;
-               visible: 0;
                color: 245 245 245 255;
                text {
                   font: "Sans:style=Bold";
-                  size: 9;
+                  size: 10;
                   min: 0 1;
                   align: 0.5 0.5;
                   text_class: "fileman_icon";
                }
+               visible: 0;
             }
             description {
                state: "selected" 0.0;
@@ -36426,6 +36363,38 @@ programs {
                visible: 1;
             }
          }
+         part {
+            name: "label2";
+            type: TEXT;
+            scale: 1;
+            //~ clip_to: "clip";
+            mouse_events: 0;
+            description {
+               state: "default" 0.0;
+               align: 0.5 0.5;
+               fixed: 0 1;
+               rel1.to: "e.text.label";
+               rel2.to: "e.text.label";
+               color: 0 0 0 255;
+               text {
+                  font: "Sans:style";
+                  text_source: "e.text.label";
+                  size: 10;
+                  min: 0 1;
+                  align: 0.5 0.5;
+                  text_class: "fileman_icon";
+               }
+               visible: 1;
+            }
+            description {
+               state: "selected" 0.0;
+               inherit: "default" 0.0;
+               color: 10 10 10 0;
+               visible: 1;
+            }
+         }
+         
+         
          part {
             name: "event";
             type: RECT;
@@ -36577,12 +36546,12 @@ programs {
                state: "default" 0.0;
                rel1 {
                   to: "base";
-                  relative: 0.0 0.0;
+                  relative: 0.1 0.1;
                   offset: 4   0;
                }
                rel2 {
                   to: "base";
-                  relative: 1.0 1.0;
+                  relative: 0.9 0.9;
                   offset: -3  -11;
                }
             }
@@ -36596,9 +36565,11 @@ programs {
                state: "default" 0.0;
                aspect: 1.0 1.0;
                aspect_preference: VERTICAL;
+               min: 48 48;
+               max: 48 48;
                rel1 {
                   to: "base";
-                  offset: 6   6;
+                  offset: 16   16;
                }
                rel2 {
                   to: "base";
@@ -36646,10 +36617,10 @@ programs {
             description {
                state: "default" 0.0;
                rel1 {
-                  offset: 2 -12;
+                  offset: 2 -18;
                   relative: 0.0 1.0;
                }
-               rel2.offset: -2 -4;
+               rel2.offset: -2 -10;
                color3: 20 20 20 60;
                color: 255 255 255 255;
                text {
@@ -36664,10 +36635,10 @@ programs {
                state: "selected" 0.0;
 	       inherit: "default" 0.0;
                rel1 {
-                  offset: 2 -12;
+                  offset: 2 -18;
                   relative: 0.0 1.0;
                }
-               rel2.offset: -2 -4;
+               rel2.offset: -2 -10;
                color: 250 250 250 255;
                color3: 20 20 20 40;
             }
@@ -36946,7 +36917,7 @@ programs {
                }
                text {
                   font: "Sans";
-                  size: 10;
+                  size: 10; //
                   min: 0 1;
                   align: 0.0 0.0;
                   text_class: "fileman_icon";
