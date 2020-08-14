@@ -12116,7 +12116,7 @@ group {
 	    aspect: 1.0 1.0;
 	    aspect_preference: BOTH;
 	    state: "high" 0.0;
-	    color: 255 0 0 225;
+	    color: 190 80 130 225;
 	 }
       }
 
