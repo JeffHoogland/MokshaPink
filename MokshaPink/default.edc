@@ -36908,7 +36908,7 @@ programs {
          }
          part {
             name: "outline";
-	    mouse_events: 0;
+            mouse_events: 0;
             description {
                state: "default" 0.0;
                rel1.to: "bg";
@@ -36956,7 +36956,7 @@ programs {
                color: 255 255 255 0;
                rel1 {
                   relative: 0.0 0.0;
-                  offset: 0   3;
+                  offset: 0   -2;
                }
                rel2 {
                   relative: 1.0 1.0;
@@ -37062,14 +37062,14 @@ programs {
                rel1 {
                   to_x: "clip";
                   to_y: "base";
-                  offset: 5 2;
-		  relative: 1.0 0.0;
+                  offset: 3 0;
+                  relative: 1.0 0.0;
                }
                rel2 {
                   relative: 0.0 1.0;
                   offset: 4 -1;
                   to_x: "arrow";
-	          to_y: "spacer";
+                  to_y: "spacer";
                }
                text {
                   font: "Sans";
