@@ -619,6 +619,17 @@ group {
                inherit: "default" 0.0;
                visible: 1;
                color: 255 255 255 255;
+               image {
+                  tween: "busy-1.png";
+                  tween: "busy-2.png";
+                  tween: "busy-3.png";
+                  tween: "busy-4.png";
+                  tween: "busy-5.png";
+                  tween: "busy-6.png";
+                  tween: "busy-7.png";
+                  tween: "busy-8.png";
+                  normal: "busy-9.png";
+               } 
             }
          }
          part {
@@ -1987,6 +1998,17 @@ group {
                inherit: "default" 0.0;
                visible: 1;
                color: 255 255 255 255;
+               image {
+                  tween: "busy-1.png";
+                  tween: "busy-2.png";
+                  tween: "busy-3.png";
+                  tween: "busy-4.png";
+                  tween: "busy-5.png";
+                  tween: "busy-6.png";
+                  tween: "busy-7.png";
+                  tween: "busy-8.png";
+                  normal: "busy-9.png";
+               } 
             }
          }
          part {
@@ -3120,6 +3142,17 @@ group {
                inherit: "default" 0.0;
                visible: 1;
                color: 255 255 255 255;
+               image {
+                  tween: "busy-1.png";
+                  tween: "busy-2.png";
+                  tween: "busy-3.png";
+                  tween: "busy-4.png";
+                  tween: "busy-5.png";
+                  tween: "busy-6.png";
+                  tween: "busy-7.png";
+                  tween: "busy-8.png";
+                  normal: "busy-9.png";
+               } 
             }
          }
          part {
@@ -3209,7 +3242,7 @@ group {
                color_class: "border_title";
                text {
                   font: "Sans:style=Bold";
-                  size: 10;
+                  size: 12;
                   min: 0 1;
                   align: 0.0 0.0;
                   text_class: "title_bar";
@@ -4058,6 +4091,17 @@ group {
                inherit: "default" 0.0;
                visible: 1;
                color: 255 255 255 255;
+               image {
+                  tween: "busy-1.png";
+                  tween: "busy-2.png";
+                  tween: "busy-3.png";
+                  tween: "busy-4.png";
+                  tween: "busy-5.png";
+                  tween: "busy-6.png";
+                  tween: "busy-7.png";
+                  tween: "busy-8.png";
+                  normal: "busy-9.png";
+               } 
             }
          }
          part {
@@ -5015,6 +5059,17 @@ group {
                inherit: "default" 0.0;
                visible: 1;
                color: 255 255 255 255;
+               image {
+                  tween: "busy-1.png";
+                  tween: "busy-2.png";
+                  tween: "busy-3.png";
+                  tween: "busy-4.png";
+                  tween: "busy-5.png";
+                  tween: "busy-6.png";
+                  tween: "busy-7.png";
+                  tween: "busy-8.png";
+                  normal: "busy-9.png";
+               } 
             }
          }
          part {
@@ -8425,7 +8480,7 @@ group {
          image: "connman-connecting-3.png" COMP;
          image: "connman-connecting-4.png" COMP;
          image: "connman-ethernet.png" COMP;
-         image: "connman-wifi.png" COMP;
+         //~ image: "connman-wifi.png" COMP;
       }
       min: 350 148;
       script {
@@ -12300,7 +12355,7 @@ programs {
       min: 56 16;
       max: 512 128;
       images {
-         image: "flip_base.png" COMP;
+         //~ image: "flip_base.png" COMP;
          image: "flip_base_shad.png" COMP;
          image: "flip_shad.png" COMP;
          image: "flip_0t.png" COMP;
@@ -12668,7 +12723,7 @@ programs {
          }
          
 #define DIGIT(nom, relto, clipto) \
-         part { name: nom"base"; \
+         part { name: nom"base"; type: RECT; \
             scale: 1; \
             description { state: "default" 0.0; \
                rel1.to: relto; \
@@ -13079,7 +13134,7 @@ programs {
          DIGIT("s2", "secs2", "sclip");
 
 #define DIGAP(nom, relto, clipto) \
-         part { name: nom"base"; \
+         part { name: nom"base"; type: RECT; \
             scale: 1; \
             description { state: "default" 0.0; \
                rel1.to: relto; \
@@ -13684,10 +13739,11 @@ programs {
          part { name: "e.text.label";
             type: TEXT;
             effect: SHADOW;
+            scale: 1;
             mouse_events: 0;
             description { state: "default" 0.0;
                align: 0.5 0.5;
-               color: 0 0 0 64;
+               color: 0 0 0 128;
                color3: 255 255 255 255;
                rel1.offset: 3 3;
                rel2.offset: -3 -3;
@@ -13748,6 +13804,7 @@ programs {
          part { name: "e.text.label";
             type: TEXT;
             mouse_events: 0;
+            scale: 1;
             clip_to: "hidden";
             description { state: "default" 0.0;
                align: 0.5 0.5;
@@ -13769,6 +13826,13 @@ programs {
                inherit: "default" 0.0;
                color: 255 255 255 255;
             }
+            description { state: "weeknumb" 0.0;
+               inherit: "default" 0.0;
+               text.size: 7;
+               text.align: 0.8 0.2;
+               color_class: "calendar_weekend";
+            }
+              
          }
          part { name: "inset";
             mouse_events: 0;
@@ -13821,6 +13885,11 @@ programs {
             target: "day";
             target: "e.text.label";
          }
+         program {
+            signal: "e,state,week"; source: "e";
+            action: STATE_SET "weeknumb" 0.0;
+            target: "e.text.label";
+      }  
       }
    }
    group { name: "e/modules/clock/calendar";
@@ -13836,6 +13905,7 @@ programs {
          part { name: "e.text.month";
             type: TEXT;
             effect: SOFT_SHADOW;
+            scale: 1;
             mouse_events: 0;
             description { state: "default" 0.0;
                fixed: 0 1;
@@ -13861,6 +13931,7 @@ programs {
          part { name: "e.text.year";
             type: TEXT;
             effect: SOFT_SHADOW;
+            scale: 1;
             mouse_events: 0;
             description { state: "default" 0.0;
                fixed: 0 1;
@@ -14028,7 +14099,7 @@ programs {
                step: 7 1;
                table {
                   homogeneous: TABLE;
-                  padding: 1 1;
+                  padding: 7 1;
                   align: 0.5 0.5;
                   min: 1 1;
                }
@@ -14049,6 +14120,7 @@ programs {
                DAYNAME(4);
                DAYNAME(5);
                DAYNAME(6);
+               DAYNAME(7);
             } }
          }
          part { name: "e.table.days"; type: TABLE;
@@ -14060,7 +14132,7 @@ programs {
                step: 7 5;
                table {
                   homogeneous: TABLE;
-                  padding: 1 1;
+                  padding: 7 1;
                   align: 0.5 0.5;
                   min: 1 1;
                }
@@ -14081,6 +14153,7 @@ programs {
                DAY(4, 0);
                DAY(5, 0);
                DAY(6, 0);
+               DAY(7, 0);
 
                DAY(0, 1);
                DAY(1, 1);
@@ -14089,6 +14162,7 @@ programs {
                DAY(4, 1);
                DAY(5, 1);
                DAY(6, 1);
+               DAY(7, 1);
 
                DAY(0, 2);
                DAY(1, 2);
@@ -14097,6 +14171,7 @@ programs {
                DAY(4, 2);
                DAY(5, 2);
                DAY(6, 2);
+               DAY(7, 2);
 
                DAY(0, 3);
                DAY(1, 3);
@@ -14105,6 +14180,7 @@ programs {
                DAY(4, 3);
                DAY(5, 3);
                DAY(6, 3);
+               DAY(7, 3);
                
                DAY(0, 4);
                DAY(1, 4);
@@ -14113,6 +14189,7 @@ programs {
                DAY(4, 4);
                DAY(5, 4);
                DAY(6, 4);
+               DAY(7, 4);
 
                DAY(0, 5);
                DAY(1, 5);
@@ -14121,6 +14198,7 @@ programs {
                DAY(4, 5);
                DAY(5, 5);
                DAY(6, 5);
+               DAY(7, 5);
             } }
          }
          part { name: "inset";
@@ -20206,6 +20284,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -20222,6 +20301,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -20241,6 +20321,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -20251,6 +20332,7 @@ programs {
                min: 24 24;
                rel1.relative: 0.75 0.0;
                rel2.relative: 1.0 1.0;
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -20750,6 +20832,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -20766,6 +20849,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -20786,6 +20870,7 @@ programs {
             description {
                state: "default" 0.0;
                color: 0 0 0 0;
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "visible" 0.0;
@@ -20795,6 +20880,7 @@ programs {
                min: 24 24;
                rel1.relative: 0.75 0.0;
                rel2.relative: 1.0 1.0;
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -21256,6 +21342,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -21272,6 +21359,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -21291,6 +21379,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -21301,6 +21390,7 @@ programs {
                min: 24 24;
                rel1.relative: 0.75 0.0;
                rel2.relative: 1.0 1.0;
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -21786,6 +21876,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -21802,6 +21893,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -21821,6 +21913,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -21831,6 +21924,7 @@ programs {
                min: 24 24;
                rel1.relative: 0.75 0.0;
                rel2.relative: 1.0 1.0;
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -22321,6 +22415,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -22336,6 +22431,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -22355,6 +22451,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -22368,6 +22465,7 @@ programs {
                rel2 {
                   relative: 1.0 1.0;
                }
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -22877,6 +22975,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -22892,6 +22991,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -22911,6 +23011,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -22924,6 +23025,7 @@ programs {
                rel2 {
                   relative: 1.0 1.0;
                }
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -23435,6 +23537,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -23450,6 +23553,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -23469,6 +23573,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -23482,6 +23587,7 @@ programs {
                rel2 {
                   relative: 1.0 1.0;
                }
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -23992,6 +24098,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -24007,6 +24114,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -24026,6 +24134,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -24039,6 +24148,7 @@ programs {
                rel2 {
                   relative: 1.0 1.0;
                }
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -28386,6 +28496,7 @@ programs {
          }
          part {
             name: "label";
+            type: RECT;
             mouse_events: 0;
             clip_to: "clip";
             description {
@@ -28687,6 +28798,7 @@ programs {
          }
          part {
             name: "label";
+            type: RECT;
             mouse_events: 0;
             clip_to: "clip";
             description {
@@ -30099,42 +30211,50 @@ programs {
          }
          part {
             name: "v1";
+            type: RECT;
             mouse_events: 1;
             clip_to: "vclip";
             description {
                state: "default" 0.0;
                rel2.relative: 1.0 0.0;
                rel2.offset: -1 9;
+               color: 0 0 0 0;
             }
          }
          part {
             name: "v2";
+            type: RECT;
             mouse_events: 1;
             clip_to: "vclip";
             description {
                state: "default" 0.0;
                rel1.relative: 0.0 1.0;
                rel1.offset: 0 -8;
+               color: 0 0 0 0;
             }
          }
          part {
             name: "h1";
+            type: RECT;
             mouse_events: 1;
             clip_to: "hclip";
             description {
                state: "default" 0.0;
                rel2.relative: 0.0 1.0;
                rel2.offset: 9 -1;
+               color: 0 0 0 0;
             }
          }
          part {
             name: "h2";
+            type: RECT;
             mouse_events: 1;
             clip_to: "hclip";
             description {
                state: "default" 0.0;
                rel1.relative: 1.0 0.0;
                rel1.offset: -8 0;
+               color: 0 0 0 0;
             }
          }
          part {
@@ -30905,6 +31025,7 @@ programs {
          }
          part {
             name: "block";
+            type: RECT;
             mouse_events: 1;
             description {
                state: "default" 0.0;
@@ -36209,11 +36330,13 @@ programs {
       parts {
          part {
             name: "clip";
+            type: RECT; 
             mouse_events: 0;
             description {
                state: "default" 0.0;
             rel1.relative: 0.05 0.0;
             rel2.relative: 0.95 1.0;
+            color: 0 0 0 0; 
             }
          }
          
@@ -36337,11 +36460,13 @@ programs {
       parts {
          part {
             name: "clip";
+            type: RECT; 
             mouse_events: 0;
             description {
                state: "default" 0.0;
                rel1.relative: 0.05 0.0;
                rel2.relative: 0.95 1.0;
+               color: 0 0 0 0; 
             }
          }
          
@@ -36783,7 +36908,7 @@ programs {
          }
          part {
             name: "outline";
-	    mouse_events: 0;
+            mouse_events: 0;
             description {
                state: "default" 0.0;
                rel1.to: "bg";
@@ -36831,7 +36956,7 @@ programs {
                color: 255 255 255 0;
                rel1 {
                   relative: 0.0 0.0;
-                  offset: 0   3;
+                  offset: 0   -2;
                }
                rel2 {
                   relative: 1.0 1.0;
@@ -36937,14 +37062,14 @@ programs {
                rel1 {
                   to_x: "clip";
                   to_y: "base";
-                  offset: 5 2;
-		  relative: 1.0 0.0;
+                  offset: 3 0;
+                  relative: 1.0 0.0;
                }
                rel2 {
                   relative: 0.0 1.0;
                   offset: 4 -1;
                   to_x: "arrow";
-	          to_y: "spacer";
+                  to_y: "spacer";
                }
                text {
                   font: "Sans";
