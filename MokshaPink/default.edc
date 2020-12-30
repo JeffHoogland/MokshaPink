@@ -619,6 +619,17 @@ group {
                inherit: "default" 0.0;
                visible: 1;
                color: 255 255 255 255;
+               image {
+                  tween: "busy-1.png";
+                  tween: "busy-2.png";
+                  tween: "busy-3.png";
+                  tween: "busy-4.png";
+                  tween: "busy-5.png";
+                  tween: "busy-6.png";
+                  tween: "busy-7.png";
+                  tween: "busy-8.png";
+                  normal: "busy-9.png";
+               } 
             }
          }
          part {
@@ -1987,6 +1998,17 @@ group {
                inherit: "default" 0.0;
                visible: 1;
                color: 255 255 255 255;
+               image {
+                  tween: "busy-1.png";
+                  tween: "busy-2.png";
+                  tween: "busy-3.png";
+                  tween: "busy-4.png";
+                  tween: "busy-5.png";
+                  tween: "busy-6.png";
+                  tween: "busy-7.png";
+                  tween: "busy-8.png";
+                  normal: "busy-9.png";
+               } 
             }
          }
          part {
@@ -3120,6 +3142,17 @@ group {
                inherit: "default" 0.0;
                visible: 1;
                color: 255 255 255 255;
+               image {
+                  tween: "busy-1.png";
+                  tween: "busy-2.png";
+                  tween: "busy-3.png";
+                  tween: "busy-4.png";
+                  tween: "busy-5.png";
+                  tween: "busy-6.png";
+                  tween: "busy-7.png";
+                  tween: "busy-8.png";
+                  normal: "busy-9.png";
+               } 
             }
          }
          part {
@@ -4058,6 +4091,17 @@ group {
                inherit: "default" 0.0;
                visible: 1;
                color: 255 255 255 255;
+               image {
+                  tween: "busy-1.png";
+                  tween: "busy-2.png";
+                  tween: "busy-3.png";
+                  tween: "busy-4.png";
+                  tween: "busy-5.png";
+                  tween: "busy-6.png";
+                  tween: "busy-7.png";
+                  tween: "busy-8.png";
+                  normal: "busy-9.png";
+               } 
             }
          }
          part {
@@ -5015,6 +5059,17 @@ group {
                inherit: "default" 0.0;
                visible: 1;
                color: 255 255 255 255;
+               image {
+                  tween: "busy-1.png";
+                  tween: "busy-2.png";
+                  tween: "busy-3.png";
+                  tween: "busy-4.png";
+                  tween: "busy-5.png";
+                  tween: "busy-6.png";
+                  tween: "busy-7.png";
+                  tween: "busy-8.png";
+                  normal: "busy-9.png";
+               } 
             }
          }
          part {
@@ -12668,7 +12723,7 @@ programs {
          }
          
 #define DIGIT(nom, relto, clipto) \
-         part { name: nom"base"; \
+         part { name: nom"base"; type: RECT; \
             scale: 1; \
             description { state: "default" 0.0; \
                rel1.to: relto; \
@@ -13079,7 +13134,7 @@ programs {
          DIGIT("s2", "secs2", "sclip");
 
 #define DIGAP(nom, relto, clipto) \
-         part { name: nom"base"; \
+         part { name: nom"base"; type: RECT; \
             scale: 1; \
             description { state: "default" 0.0; \
                rel1.to: relto; \
@@ -20206,6 +20261,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -20222,6 +20278,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -20241,6 +20298,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -20251,6 +20309,7 @@ programs {
                min: 24 24;
                rel1.relative: 0.75 0.0;
                rel2.relative: 1.0 1.0;
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -20750,6 +20809,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -20766,6 +20826,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -20786,6 +20847,7 @@ programs {
             description {
                state: "default" 0.0;
                color: 0 0 0 0;
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "visible" 0.0;
@@ -20795,6 +20857,7 @@ programs {
                min: 24 24;
                rel1.relative: 0.75 0.0;
                rel2.relative: 1.0 1.0;
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -21256,6 +21319,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -21272,6 +21336,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -21291,6 +21356,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -21301,6 +21367,7 @@ programs {
                min: 24 24;
                rel1.relative: 0.75 0.0;
                rel2.relative: 1.0 1.0;
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -21786,6 +21853,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -21802,6 +21870,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -21821,6 +21890,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -21831,6 +21901,7 @@ programs {
                min: 24 24;
                rel1.relative: 0.75 0.0;
                rel2.relative: 1.0 1.0;
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -22321,6 +22392,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -22336,6 +22408,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -22355,6 +22428,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -22368,6 +22442,7 @@ programs {
                rel2 {
                   relative: 1.0 1.0;
                }
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -22877,6 +22952,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -22892,6 +22968,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -22911,6 +22988,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -22924,6 +23002,7 @@ programs {
                rel2 {
                   relative: 1.0 1.0;
                }
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -23435,6 +23514,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -23450,6 +23530,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -23469,6 +23550,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -23482,6 +23564,7 @@ programs {
                rel2 {
                   relative: 1.0 1.0;
                }
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -23992,6 +24075,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_vol_unmounted.png";
                color: 0 0 0 0;
             }
             description {
@@ -24007,6 +24091,7 @@ programs {
                   relative: 1.0 1.0;
                   to: "icon";
                }
+               image.normal: "icon_efm_vol_unmounted.png";
             }
             description {
                state: "unmounted" 0.0;
@@ -24026,6 +24111,7 @@ programs {
             repeat_events: 0;
             description {
                state: "default" 0.0;
+               image.normal: "icon_efm_dnd_copy.png";
                color: 0 0 0 0;
             }
             description {
@@ -24039,6 +24125,7 @@ programs {
                rel2 {
                   relative: 1.0 1.0;
                }
+               image.normal: "icon_efm_dnd_copy.png";
             }
             description {
                state: "copy" 0.0;
@@ -28386,6 +28473,7 @@ programs {
          }
          part {
             name: "label";
+            type: RECT;
             mouse_events: 0;
             clip_to: "clip";
             description {
@@ -28687,6 +28775,7 @@ programs {
          }
          part {
             name: "label";
+            type: RECT;
             mouse_events: 0;
             clip_to: "clip";
             description {
@@ -30099,42 +30188,50 @@ programs {
          }
          part {
             name: "v1";
+            type: RECT;
             mouse_events: 1;
             clip_to: "vclip";
             description {
                state: "default" 0.0;
                rel2.relative: 1.0 0.0;
                rel2.offset: -1 9;
+               color: 0 0 0 0;
             }
          }
          part {
             name: "v2";
+            type: RECT;
             mouse_events: 1;
             clip_to: "vclip";
             description {
                state: "default" 0.0;
                rel1.relative: 0.0 1.0;
                rel1.offset: 0 -8;
+               color: 0 0 0 0;
             }
          }
          part {
             name: "h1";
+            type: RECT;
             mouse_events: 1;
             clip_to: "hclip";
             description {
                state: "default" 0.0;
                rel2.relative: 0.0 1.0;
                rel2.offset: 9 -1;
+               color: 0 0 0 0;
             }
          }
          part {
             name: "h2";
+            type: RECT;
             mouse_events: 1;
             clip_to: "hclip";
             description {
                state: "default" 0.0;
                rel1.relative: 1.0 0.0;
                rel1.offset: -8 0;
+               color: 0 0 0 0;
             }
          }
          part {
@@ -30905,6 +31002,7 @@ programs {
          }
          part {
             name: "block";
+            type: RECT;
             mouse_events: 1;
             description {
                state: "default" 0.0;
@@ -36209,11 +36307,13 @@ programs {
       parts {
          part {
             name: "clip";
+            type: RECT; 
             mouse_events: 0;
             description {
                state: "default" 0.0;
             rel1.relative: 0.05 0.0;
             rel2.relative: 0.95 1.0;
+            color: 0 0 0 0; 
             }
          }
          
@@ -36337,11 +36437,13 @@ programs {
       parts {
          part {
             name: "clip";
+            type: RECT; 
             mouse_events: 0;
             description {
                state: "default" 0.0;
                rel1.relative: 0.05 0.0;
                rel2.relative: 0.95 1.0;
+               color: 0 0 0 0; 
             }
          }
          
